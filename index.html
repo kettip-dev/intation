@@ -790,64 +790,90 @@
 
   /* ── CONTACT SECTION ── */
   #contact {
-    padding: 2.5rem 1.2rem 2rem;
+    padding: 3rem 1.2rem 2.5rem;
     text-align: center;
     position: relative; z-index: 2;
+    background: linear-gradient(180deg, transparent 0%, var(--bg2) 50%, transparent 100%);
   }
-  .contact-inner { max-width: 640px; margin: 0 auto; }
+  .contact-inner { max-width: 700px; margin: 0 auto; }
+  .contact-divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.2rem auto 1.8rem;
+  }
   .contact-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .85rem;
+    margin-top: 0;
+  }
+  @media(max-width:540px){
+    .contact-cards { grid-template-columns: 1fr; }
   }
   .contact-card {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+    gap: 1rem;
+    background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
     border: 1px solid rgba(245,202,60,.2);
-    border-radius: 14px;
-    padding: .8rem 1.1rem;
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
     text-decoration: none;
     color: var(--text);
-    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    transition: transform .35s cubic-bezier(.23,1,.32,1), border-color .3s ease, box-shadow .3s ease;
     position: relative; overflow: hidden;
+    text-align: left;
   }
   .contact-card::before {
     content:''; position:absolute; inset:0;
-    background: linear-gradient(90deg, rgba(245,202,60,.04), transparent);
-    opacity:0; transition: opacity .3s;
+    background: linear-gradient(120deg, rgba(245,202,60,.06), transparent 60%);
+    opacity:0; transition: opacity .35s;
   }
   .contact-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(245,202,60,.5);
-    box-shadow: 0 12px 40px rgba(0,0,0,.3), 0 0 20px rgba(245,202,60,.1);
+    transform: translateY(-5px) scale(1.01);
+    border-color: rgba(245,202,60,.55);
+    box-shadow: 0 16px 48px rgba(0,0,0,.35), 0 0 22px rgba(245,202,60,.12);
   }
   .contact-card:hover::before { opacity:1; }
   .contact-icon {
-    width: 48px; height: 48px; flex-shrink: 0;
+    width: 44px; height: 44px; flex-shrink: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(245,202,60,.2), rgba(245,202,60,.06));
-    border: 1px solid rgba(245,202,60,.3);
+    background: linear-gradient(135deg, rgba(245,202,60,.22), rgba(245,202,60,.06));
+    border: 1px solid rgba(245,202,60,.35);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; color: var(--gold);
-    box-shadow: 0 0 15px rgba(245,202,60,.15);
+    font-size: 1rem; color: var(--gold);
+    box-shadow: 0 0 18px rgba(245,202,60,.18);
+    transition: box-shadow .3s ease;
+  }
+  .contact-card:hover .contact-icon {
+    box-shadow: 0 0 28px rgba(245,202,60,.45);
   }
   .contact-info {
     display: flex; flex-direction: column;
-    align-items: flex-start; gap: .2rem;
+    align-items: flex-start; gap: .18rem;
+    flex: 1; min-width: 0;
   }
   .contact-label {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: .65rem; letter-spacing: .25em;
+    font-size: .6rem; letter-spacing: .22em;
     text-transform: uppercase; color: var(--gold);
-    opacity: .8;
+    opacity: .85;
   }
   .contact-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem; font-weight: 500;
-    color: var(--text); letter-spacing: .04em;
+    font-size: 1.1rem; font-weight: 500;
+    color: var(--text); letter-spacing: .02em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .contact-arrow {
+    flex-shrink: 0; color: rgba(245,202,60,.35);
+    font-size: .75rem;
+    transition: transform .3s ease, color .3s ease;
+  }
+  .contact-card:hover .contact-arrow {
+    transform: translateX(3px);
+    color: var(--gold);
   }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;600&display=swap" rel="stylesheet">
@@ -1071,14 +1097,16 @@
 <section id="contact">
   <div class="contact-inner">
     <p class="section-label reveal" data-en="Get In Touch" data-kh="ទំនាក់ទំនង">Get In Touch</p>
-    <h2 class="section-title reveal" data-en="Contact Us" data-kh="ទំនាក់ទំនងយើង">Contact</h2>
+    <h2 class="section-title reveal" data-en="Contact Us" data-kh="ទំនាក់ទំនងយើង">Contact Us</h2>
+    <div class="contact-divider reveal"></div>
     <div class="contact-cards reveal">
       <a class="contact-card" href="tel:0963696969">
         <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
         <div class="contact-info">
           <span class="contact-label">Phone</span>
-          <span class="contact-value">(096 | 076 | 031) - 3696969</span>
+          <span class="contact-value">096 / 076 / 031 – 369 6969</span>
         </div>
+        <i class="fa-solid fa-chevron-right contact-arrow"></i>
       </a>
       <a class="contact-card" href="mailto:info@durianx.com">
         <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
@@ -1086,6 +1114,7 @@
           <span class="contact-label">Email</span>
           <span class="contact-value">info@durianx.com</span>
         </div>
+        <i class="fa-solid fa-chevron-right contact-arrow"></i>
       </a>
     </div>
   </div>
