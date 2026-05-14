@@ -259,7 +259,7 @@
   }
   .event-col-main {
     font-family: 'Moul', serif;
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: clamp(1.1rem, 3vw, 2rem);
     font-weight: 400; 
     background: linear-gradient(135deg, var(--text) 30%, var(--gold-light));
     -webkit-background-clip: text;
@@ -914,27 +914,30 @@
   <div class="details-inner">
     <p class="section-label reveal" data-en="Event Details" data-kh="ព័ត៌មានព្រើត្តិការណ៍">ព័ត៌មានព្រើត្តិការណ៍<span class="bi-en">Event Details</span></p>
     <div class="event-strip reveal">
-      <!-- DATE -->
+      <!-- DATE & TIME combined -->
       <div class="event-col">
-        <i class="fa-regular fa-calendar-days event-col-icon"></i>
-        <p class="event-col-label">កាលបរិច្ឆេទ<span class="bi-en" style="display:block">Date</span></p>
-        <p class="event-col-main"> ១ មិថុនា ២០២៦</p>
-        <p class="event-col-sub">Monday, 1 June 2026</p>
-      </div>
-      <div class="event-divider"></div>
-      <!-- TIME -->
-      <div class="event-col">
-        <i class="fa-regular fa-clock event-col-icon"></i>
-        <p class="event-col-label">ម័ោង<span class="bi-en" style="display:block">Time</span></p>
-        <p class="event-col-main">2:30&thinsp;<span style="font-size:.5em;opacity:.65">PM</span></p>
-        <p class="event-col-sub">Until 7:00 PM &middot; Reg. 2:30</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;">
+            <i class="fa-regular fa-calendar-days event-col-icon"></i>
+            <p class="event-col-label">កាលបរិច្ឆេទ<span class="bi-en" style="display:block">Date</span></p>
+            <p class="event-col-main"> ១ មិថុនា ២០២៦</p>
+            <p class="event-col-sub">Monday, 1 June 2026</p>
+          </div>
+          <div style="width:1px;height:60px;background:linear-gradient(180deg,transparent,rgba(245,202,60,.4),transparent);flex-shrink:0;"></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;">
+            <i class="fa-regular fa-clock event-col-icon"></i>
+            <p class="event-col-label">ម័ោង<span class="bi-en" style="display:block">Time</span></p>
+            <p class="event-col-main">2:30&thinsp;<span style="font-size:.5em;opacity:.65">PM</span></p>
+            <p class="event-col-sub">Until 7:00 PM &middot; Reg. 2:30</p>
+          </div>
+        </div>
       </div>
       <div class="event-divider"></div>
       <!-- LOCATION -->
       <a class="event-col" href="https://maps.app.goo.gl/N9CgUn7mfg4kiTGG8" target="_blank" rel="noopener">
         <i class="fa-solid fa-location-dot event-col-icon"></i>
         <p class="event-col-label">ទីតាំង<span class="bi-en" style="display:block">Location</span></p>
-        <p class="event-col-main">DurianX<br/>Office</p>
+        <p class="event-col-main">DurianX Office</p>
         <span class="map-open-hint">
           <i class="fa-solid fa-map-location-dot"></i> Open Maps
           <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.6rem;margin-left:.2rem"></i>
@@ -944,20 +947,6 @@
   </div>
 </section>
 
-<!-- ══ ABOUT ══ -->
-<section id="about">
-  <div class="about-inner">
-    <div class="about-badge reveal"><i class="fa-solid fa-crown"></i> <span data-en="Official Launch" data-kh="ការសម្ពោធជាផ្លូវការ">Official Launch</span></div>
-    <!-- <p class="section-label reveal" data-en="About the Event" data-kh="អំពីព្រឹត្តិការណ៍">About the Event</p> -->
-    <h2 class="section-title reveal" data-en="Food Delivery &amp; Express Service" data-kh="សេវាដឹកជញ្ជូនម្ហូបអាហារ និងកញ្ចប់អីវ៉ាន់">Food Delivery &amp; Express Service</h2>
-    <p class="about-body reveal" data-en="<strong>DurianX</strong> is proud to officially launch its <strong>Food Delivery &amp; Express Service</strong>. Join us as we unveil Cambodia's most premium delivery experience — connecting merchants, riders, and customers in one seamless ecosystem. This grand opening marks a new era of convenience, speed, and excellence." data-kh="<strong>DurianX</strong> មានសេចក្ដីរីករាយក្នុងការសម្ពោធជាផ្លូវការនូវ<strong>សេវាដឹកជញ្ជូនម្ហូបអាហារ និងកញ្ចប់អីវ៉ាន់</strong>។ ចូលរួមជាមួយយើងក្នុងការបង្ហាញបទពិសោធន៍ដឹកជញ្ជូនដ៏ប្រណីតបំផុតនៅកម្ពុជា — ភ្ជាប់ពាណិជ្ជករ អ្នកដឹកជញ្ជូន និងអតិថិជនក្នុងប្រព័ន្ធអេកូតែមួយ។"><strong>DurianX</strong> is proud to officially launch its <strong>Food Delivery &amp; Express Service</strong>. Join us as we unveil Cambodia's most premium delivery experience — connecting merchants, riders, and customers in one seamless ecosystem. This grand opening marks a new era of convenience, speed, and excellence.</p>
-    <div class="about-app-demo reveal">
-      <div class="about-phone-frame">
-        <img src="app-demo.svg" alt="DurianX App"/>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ══ SCHEDULE ══ -->
 <section id="schedule">
@@ -1092,33 +1081,22 @@
 </section>
 
 
-
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="contact-inner">
-    <p class="section-label reveal" data-en="Get In Touch" data-kh="ទំនាក់ទំនង">Get In Touch</p>
-    <h2 class="section-title reveal" data-en="Contact Us" data-kh="ទំនាក់ទំនងយើង">Contact Us</h2>
-    <div class="contact-divider reveal"></div>
-    <div class="contact-cards reveal">
-      <a class="contact-card" href="tel:0963696969">
-        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="contact-info">
-          <span class="contact-label">Phone</span>
-          <span class="contact-value">096 / 076 / 031 – 369 6969</span>
-        </div>
-        <i class="fa-solid fa-chevron-right contact-arrow"></i>
-      </a>
-      <a class="contact-card" href="mailto:info@durianx.com">
-        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="contact-info">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">info@durianx.com</span>
-        </div>
-        <i class="fa-solid fa-chevron-right contact-arrow"></i>
-      </a>
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-badge reveal"><i class="fa-solid fa-crown"></i> <span data-en="Official Launch" data-kh="ការសម្ពោធជាផ្លូវការ">Official Launch</span></div>
+    <!-- <p class="section-label reveal" data-en="About the Event" data-kh="អំពីព្រឹត្តិការណ៍">About the Event</p> -->
+    <h2 class="section-title reveal" data-en="Food Delivery &amp; Express Service" data-kh="សេវាដឹកជញ្ជូនម្ហូបអាហារ និងកញ្ចប់អីវ៉ាន់">Food Delivery &amp; Express Service</h2>
+    <p class="about-body reveal" data-en="<strong>DurianX</strong> is proud to officially launch its <strong>Food Delivery &amp; Express Service</strong>. Join us as we unveil Cambodia's most premium delivery experience — connecting merchants, riders, and customers in one seamless ecosystem. This grand opening marks a new era of convenience, speed, and excellence." data-kh="<strong>DurianX</strong> មានសេចក្ដីរីករាយក្នុងការសម្ពោធជាផ្លូវការនូវ<strong>សេវាដឹកជញ្ជូនម្ហូបអាហារ និងកញ្ចប់អីវ៉ាន់</strong>។ ចូលរួមជាមួយយើងក្នុងការបង្ហាញបទពិសោធន៍ដឹកជញ្ជូនដ៏ប្រណីតបំផុតនៅកម្ពុជា — ភ្ជាប់ពាណិជ្ជករ អ្នកដឹកជញ្ជូន និងអតិថិជនក្នុងប្រព័ន្ធអេកូតែមួយ។"><strong>DurianX</strong> is proud to officially launch its <strong>Food Delivery &amp; Express Service</strong>. Join us as we unveil Cambodia's most premium delivery experience — connecting merchants, riders, and customers in one seamless ecosystem. This grand opening marks a new era of convenience, speed, and excellence.</p>
+    <div class="about-app-demo reveal">
+      <div class="about-phone-frame">
+        <img src="app-demo.svg" alt="DurianX App"/>
+      </div>
     </div>
   </div>
 </section>
+
+ 
 
 <footer>
   <p>© 2026 <span>DurianX</span> &nbsp;·&nbsp; All rights reserved</p>
